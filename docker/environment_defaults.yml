@@ -1,0 +1,9 @@
+name: base
+channels:
+  - conda-forge
+dependencies:
+  - jupyterlab
+  - nodejs
+  - blosc
+  - lz4
+  - python-blosc

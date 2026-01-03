@@ -1,0 +1,7 @@
+# for multiple platform
+docker buildx build --platform linux/amd64,linux/arm64 -t myimage:latest .
+# single
+docker buildx build --platform linux/amd64 -f Dockerfile.base -t my-base-image:latest .
+
+# for the notebook
+docker buildx build --platform linux/amd64 -f Dockerfile.app -t jupyter-notebook:latest .

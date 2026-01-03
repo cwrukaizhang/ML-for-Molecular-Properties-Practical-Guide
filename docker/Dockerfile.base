@@ -1,0 +1,37 @@
+# Dockerfile.base
+FROM debian:bookworm-slim
+
+# Ensure all packages are updated to the latest security patches
+RUN apt-get update && apt-get upgrade -y && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Define environment variables and install essential packages
+ENV CONDA_DIR=/opt/conda
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+ENV PATH=${CONDA_DIR}/bin:${PATH}
+
+ARG MINIFORGE_NAME=miniforge3
+ARG MINIFORGE_VERSION=25.3.1-0
+
+# Install Miniforge and core dependencies
+RUN apt-get update && \
+    apt-get install --no-install-recommends --yes \
+    wget bzip2 ca-certificates \
+    git git-lfs\
+    tini \
+    tar libcairo2 ssh build-essential ca-certificates\
+    && apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    wget --no-hsts --quiet https://github.com/conda-forge/miniforge/releases/download/${MINIFORGE_VERSION}/${MINIFORGE_NAME}-${MINIFORGE_VERSION}-Linux-x86_64.sh \
+    -O /tmp/miniforge.sh && \
+    bash /tmp/miniforge.sh -b -p ${CONDA_DIR} && \
+    rm /tmp/miniforge.sh && \
+    ${CONDA_DIR}/bin/conda clean --tarballs --index-cache --packages --yes && \
+    find ${CONDA_DIR} -follow -type f -name '*.a' -delete && \
+    find ${CONDA_DIR} -follow -type f -name '*.pyc' -delete && \
+    ${CONDA_DIR}/bin/conda clean --force-pkgs-dirs --all --yes && \
+    echo ". ${CONDA_DIR}/etc/profile.d/conda.sh && conda activate base" >> /etc/skel/.bashrc && \
+    echo ". ${CONDA_DIR}/etc/profile.d/conda.sh && conda activate base" >> ~/.bashrc
+
+# Set ENTRYPOINT to enable Tini as the container's init system
+ENTRYPOINT ["tini", "--"]
+CMD ["/bin/bash"]
