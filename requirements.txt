@@ -164,4 +164,4 @@ xxhash==3.6.0
 yarl==1.22.0
 
 pip install --default-timeout=300 --trusted-host data.pyg.org pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.7.0+cu128.html
-pip install pandas==2.3.3 plotly==6.5.0 rdkit==2025.9.3 scikit-learn==1.8.0 optuna==4.6.0
+pip install pandas==2.3.3 plotly==6.5.0 rdkit==2025.9.3 scikit-learn==1.8.0 optuna==4.6.0 kaleido==1.2.0
