@@ -1,6 +1,6 @@
 *.sdf
 *.docx
 *.pdf
-*.DS_Store
+.DS_Store
 __pycache__/
 testing-notebook.ipynb
