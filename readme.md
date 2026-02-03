@@ -16,3 +16,15 @@ conda env create -f environment-cpu.yaml
 ```
 conda env create -f environment-gpu.yaml
 ```
+## Model deployment
+1. Standalone script
+Model prediction can be made by running the deployment script after activating the Python environment in command line interfacre.
+For example, the prediction can be made for one structure each time.
+```sh
+python standalone.py --smiles "C1CCCCC1" "CCO" "c1ccccc1"
+```
+Similarly, predictions can be made a for series of molecular structures.
+```sh
+python standalone.py --smiles "C1CCCCC1" "CCO" "c1ccccc1"
+```
+
