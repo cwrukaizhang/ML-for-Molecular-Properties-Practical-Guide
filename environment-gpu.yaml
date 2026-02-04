@@ -39,6 +39,8 @@ dependencies:
     - shap==0.49.1
     # Captum
     - captum==0.8.0
+    - streamlit==1.53.1
+    - streamlit_ketcher==0.0.1
     - torch-scatter
     - torch-sparse
     - torch-cluster
