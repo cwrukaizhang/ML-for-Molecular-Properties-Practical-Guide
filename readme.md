@@ -27,4 +27,18 @@ Similarly, predictions can be made a for series of molecular structures.
 ```sh
 python standalone.py --smiles "C1CCCCC1" "CCO" "c1ccccc1"
 ```
+2. GUI interface
+The model can also be deployed locally with a graphical user interface (GUI) or as a web application. A brief example using Streamlit is provided, which includes a molecular drawing tool. Users can simply draw a structure and click a button to get the prediction.
+To run the GUI deployment, the environment created in the very begininng needs to be activated first.
+```shell
+conda activate learning-project
+```
+Running the deployment script.
+```shell
+streamlit run streamlit_gui.py 
+```
+A new browser tab will open with the interface. If it does not open automatically, you can manually visit the following address: [http://localhost:8501](http://localhost:8501).
 
+![Streamlit GUI Interface](deployment/streamlit_gui.png)
+
+3. API deployment
