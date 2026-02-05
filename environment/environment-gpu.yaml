@@ -27,9 +27,11 @@ dependencies:
   # Dependencies that need pip installation
   - pip:
     # torch and torch-geometric and its dependencies
-    - pytorch=2.7.0
-    - torchvision=0.22.0
-    - torchaudio=2.7.0
+    - pytorch==2.7.0
+    - fastapi==0.128.1
+    - uvicorn==0.40.0
+    - torchvision==0.22.0
+    - torchaudio==2.7.0
     - -f https://download.pytorch.org/whl/cu118
     - torch-geometric==2.7.0
     - PubChemPy

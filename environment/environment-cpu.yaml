@@ -22,7 +22,7 @@ dependencies:
   
   # Platform-specific PyTorch (handled by conda)
   # Conda will automatically select the appropriate version based on system
-  - pytorch=2.7.0
+  - pytorch=.7.0
   - torchvision=0.22.0
   - torchaudio=2.7.0
   
@@ -31,6 +31,8 @@ dependencies:
     # torch-geometric and its dependencies
     
     - torch-geometric==2.7.0
+    - fastapi==0.128.1
+    - uvicorn==0.40.0
     - PubChemPy
     # RDKit (better via pip for specific version)
     - rdkit==2025.9.2
