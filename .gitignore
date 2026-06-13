@@ -8,3 +8,10 @@ model_interpretation_old.ipynb
 *.pptx
 image_pub/
 manuscript/
+v1/
+v2/
+v3/
+v4/
+v5/
+usrcat/
+*copy.ipynb
