@@ -6,6 +6,7 @@ __pycache__/
 testing-notebook.ipynb
 model_interpretation_old.ipynb
 *.pptx
+.vscode
 image_pub/
 manuscript/
 v1/
