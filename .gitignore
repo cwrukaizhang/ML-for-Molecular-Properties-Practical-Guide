@@ -19,3 +19,4 @@ usrcat/
 pyg_chemprop.py
 pyg_chemprop_utils.py
 extensions.json
+reproduce_image/
